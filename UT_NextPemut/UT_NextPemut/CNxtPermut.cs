@@ -18,57 +18,80 @@ namespace UT_NextPemut
             return 0;
         }
 
-        public  int[] nextPermutation(int[] arr)
+        /*  public void NextPermutation(int[] nums)
+          {
+              int n = nums.Length;
+              if (n < 2)
+                  return;
+              int index = n - 1;
+              while (index > 0)
+              {
+                  if (nums[index - 1] < nums[index])
+                      break;
+                  index--;
+              }
+              if (index == 0)
+              {
+                  reverseSort(nums, 0, n - 1);
+                  return;
+              }
+              else
+              {
+                  int val = nums[index - 1];
+                  int j = n - 1;
+                  while (j >= index)
+                  {
+                      if (nums[j] > val)
+                          break;
+                      j--;
+                  }
+                  swap(nums, j, index - 1);
+                  reverseSort(nums, index, n - 1);
+                  return;
+              }
+
+          }
+          // swap function
+          public void swap(int[] num, int i, int j)
+          {
+              int temp = 0;
+              temp = num[i];
+              num[i] = num[j];
+              num[j] = temp;
+          }
+          // using swap function to reverse
+          public void reverseSort(int[] num, int start, int end)
+          {
+              if (start > end)
+                  return;
+              for (int i = start; i <= (end + start) / 2; i++)
+                  swap(num, i, start + end - i);
+          }*/
+
+        public  int[] NextPermutation(int[] array) 
         {
-            var n = arr.Length;
-            int i;
-            int j;
-
-            
-            for (i = n - 2; i >= 0; i--)
+            int[] result = new int[array.Length];
+            Array.Copy(array, result, array.Length);
+            int i = result.Length - 2;
+            while (i >= 0 && result[i].CompareTo(result[i + 1]) >= 0)
             {
-                if (arr[i] < arr[i + 1])
-                {
-                    break;
-                }
+                i--;
             }
-
             if (i < 0)
             {
-                CNxtPermut.reverse(arr, 0, arr.Length - 1);
-                return arr;
+                Array.Reverse(result);
+                return result;
             }
-            else
+            int j = result.Length - 1;
+            while (result[j].CompareTo(result[i]) <= 0)
             {
-
-                for (j = n - 1; j > i; j--)
-                {
-                    if (arr[j] > arr[i])
-                    {
-                        break;
-                    }
-                }
-
-                CNxtPermut.swap(arr, i, j);
-
-                CNxtPermut.reverse(arr, i + 1, arr.Length - 1);
-                return arr;
+                j--;
             }
-        }
-        public static void reverse(int[] arr, int start, int end)
-        {
-            while (start < end)
-            {
-                CNxtPermut.swap(arr, start, end);
-                start++;
-                end--;
-            }
-        }
-        public static void swap(int[] arr, int i, int j)
-        {
-            var temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            int temp = result[i];
+            result[i] = result[j];
+            result[j] = temp;
+            Array.Reverse(result, i + 1, result.Length - i - 1);
+            return result;
         }
     }
 }
