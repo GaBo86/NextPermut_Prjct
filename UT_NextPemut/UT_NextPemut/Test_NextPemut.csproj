@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNxtPermut.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UT_Permut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

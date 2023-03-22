@@ -18,7 +18,7 @@ namespace UT_NextPemut
             return 0;
         }
 
-        /*  public void NextPermutation(int[] nums)
+          public void NextPermutation(int[] nums)
           {
               int n = nums.Length;
               if (n < 2)
@@ -66,9 +66,9 @@ namespace UT_NextPemut
                   return;
               for (int i = start; i <= (end + start) / 2; i++)
                   swap(num, i, start + end - i);
-          }*/
+          }
 
-        public  int[] NextPermutation(int[] array) 
+        public  int[] NextPermutation2(int[] array) 
         {
             int[] result = new int[array.Length];
             Array.Copy(array, result, array.Length);

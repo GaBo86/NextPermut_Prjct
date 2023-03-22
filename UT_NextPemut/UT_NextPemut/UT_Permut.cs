@@ -22,11 +22,12 @@ namespace UT_NextPemut
         {
             var permut = new CNxtPermut();
             int[] vector = new int[] {1,2,3};
-            int[] outVec;
-            int[] compVec = new int[] {1,3,2} ;
-            outVec = permut.NextPermutation(vector);
+           
+            permut.NextPermutation(vector);
+            Assert.AreEqual(1, vector[0]);
+            Assert.AreEqual(3, vector[1]);
+            Assert.AreEqual(2, vector[2]);
             
-            Assert.AreEqual(compVec, vector);
         }
 
         [TestMethod]
@@ -35,11 +36,11 @@ namespace UT_NextPemut
         {
             var permut = new CNxtPermut();
             int[] vector = new int[] {3,2,1};
-            int[] outVec;
-            int[] compVec = new int[] {1,2,3};
-            outVec = permut.NextPermutation(vector);
 
-            Assert.AreEqual(compVec, vector);
+            permut.NextPermutation(vector);
+            Assert.AreEqual(1, vector[0]);
+            Assert.AreEqual(2, vector[1]);
+            Assert.AreEqual(3, vector[2]);
         }
 
         [TestMethod]
@@ -48,11 +49,11 @@ namespace UT_NextPemut
         {
             var permut = new CNxtPermut();
             int[] vector = new int[] {1,1,5};
-            int[] outVec;
-            int[] compVec = new int[] {1,5,1};
-            outVec = permut.NextPermutation(vector);
 
-            Assert.AreEqual(compVec, vector);
+            permut.NextPermutation(vector);
+            Assert.AreEqual(1, vector[0]);
+            Assert.AreEqual(5, vector[1]);
+            Assert.AreEqual(1, vector[2]);
         }
     }
 
