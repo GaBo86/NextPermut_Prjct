@@ -15,5 +15,17 @@ namespace UT_NextPemut
             Assert.AreEqual(0, result);
 
 ;        }
+
+        [TestMethod]
+
+        public void retur_3Numb()
+        {
+            var permut = new CNxtPermut();
+            int[] vector = new int[] { 1,2,3};
+            var result = permut.nextPermutation(vector);
+            Assert.AreEqual("1,3,2", result);
+        }
     }
+
+
 }
