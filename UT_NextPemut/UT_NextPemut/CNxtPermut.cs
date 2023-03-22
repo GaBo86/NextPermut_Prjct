@@ -24,10 +24,7 @@ namespace UT_NextPemut
             int i;
             int j;
 
-            // Find for the pivot element.
-            // A pivot is the first element from
-            // end of sequencewhich doesn't follow
-            // property of non-increasing suffix
+            
             for (i = n - 2; i >= 0; i--)
             {
                 if (arr[i] < arr[i + 1])
@@ -36,7 +33,6 @@ namespace UT_NextPemut
                 }
             }
 
-            // Check if pivot is not found
             if (i < 0)
             {
                 CNxtPermut.reverse(arr, 0, arr.Length - 1);
@@ -45,7 +41,6 @@ namespace UT_NextPemut
             else
             {
 
-                // Find for the successor of pivot in suffix
                 for (j = n - 1; j > i; j--)
                 {
                     if (arr[j] > arr[i])
@@ -54,10 +49,8 @@ namespace UT_NextPemut
                     }
                 }
 
-                // Swap the pivot and successor
                 CNxtPermut.swap(arr, i, j);
 
-                // Minimise the suffix part
                 CNxtPermut.reverse(arr, i + 1, arr.Length - 1);
                 return arr;
             }
