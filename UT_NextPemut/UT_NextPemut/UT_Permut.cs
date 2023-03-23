@@ -24,9 +24,21 @@ namespace UT_NextPemut
             int[] vector = new int[] {1,2,3};
            
             permut.NextPermutation(vector);
-            Assert.AreEqual(1, vector[0]);
-            Assert.AreEqual(3, vector[1]);
-            Assert.AreEqual(2, vector[2]);
+            for (int i=0; i<=vector.Length; i++)
+            {
+                if (i == 0)
+                {
+                    Assert.AreEqual(1, vector[i]);
+                }
+                else if(i == 1)
+                {
+                    Assert.AreEqual(3, vector[i]);
+                }
+               else if (i == 2)
+                {
+                    Assert.AreEqual(2, vector[i]);
+                }
+            }         
             
         }
 
@@ -38,9 +50,23 @@ namespace UT_NextPemut
             int[] vector = new int[] {3,2,1};
 
             permut.NextPermutation(vector);
-            Assert.AreEqual(1, vector[0]);
-            Assert.AreEqual(2, vector[1]);
-            Assert.AreEqual(3, vector[2]);
+
+            for (int i = 0; i <= vector.Length; i++)
+            {
+                if (i == 0)
+                {
+                    Assert.AreEqual(1, vector[i]);
+                }
+                else if (i == 1)
+                {
+                    Assert.AreEqual(2, vector[i]);
+                }
+                else if (i == 2)
+                {
+                    Assert.AreEqual(3, vector[i]);
+                }
+            }
+           
         }
 
         [TestMethod]
@@ -51,9 +77,23 @@ namespace UT_NextPemut
             int[] vector = new int[] {1,1,5};
 
             permut.NextPermutation(vector);
-            Assert.AreEqual(1, vector[0]);
-            Assert.AreEqual(5, vector[1]);
-            Assert.AreEqual(1, vector[2]);
+
+            for (int i = 0; i <= vector.Length; i++)
+            {
+                if (i == 0)
+                {
+                    Assert.AreEqual(1, vector[i]);
+                }
+                else if (i == 1)
+                {
+                    Assert.AreEqual(5, vector[i]);
+                }
+                else if (i == 2)
+                {
+                    Assert.AreEqual(1, vector[i]);
+                }
+            }
+           
         }
     }
 
