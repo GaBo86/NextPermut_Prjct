@@ -8,22 +8,13 @@ namespace UT_NextPemut
         {
         }
 
-        internal object get_Vector()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object get_Vector(int[] pvector)
-        {
-            return 0;
-        }
-
-          public void NextPermutation(int[] nums)
+        public void NextPermutation(int[] nums)
           {
               int n = nums.Length;
-              if (n < 2)
-                  return;
-              int index = n - 1;
+            if (n < 2)
+                //return;
+                throw new  ArgumentException("The vector length value must be greater than two");
+                int index = n - 1;
               while (index > 0)
               {
                   if (nums[index - 1] < nums[index])

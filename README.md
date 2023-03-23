@@ -19,6 +19,7 @@ Tests were carried out for the following possible outputs:
 `Example 1: ` Input: nums = [1,2,3] Output: [1,3,2]
 `Example 2:` Input: nums = [3,2,1] Output: [1,2,3]
 `Example 3:` Input: nums = [1,1,5] Output: [1,5,1]
+`Example 4:` Input nums =[1,5] throw exception because the vector length < 2
 
 ##  :file_folder: Project acces 
 
